@@ -1,2 +1,0 @@
-this is the final version to generate a game world via javascript with all
-the previous CSS removed so it is much less code.
