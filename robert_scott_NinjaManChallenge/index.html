@@ -18,12 +18,6 @@
 		width: 40px;
 		display: inline-block;
 	}
-	.scoreboard {
-		background-color: purple;
-		height: 40px;
-		width: 40px;
-		display: inline-block;
-	}	
 	.sushi {
 		background-color: black;
 		height: 40px;
@@ -59,9 +53,11 @@
 
 		<div id="world"></div>
 		<div id="ninjaman"></div>
-		<div id="score"></div>
+		<div id="score"></span>Score: 0</div>
 
 	<script type="text/javascript">
+		var score = 0;
+
 		var world = [
 			[1,1,1,1,1,1,1,1,1,1],
 			[1,0,0,0,1,4,1,0,0,1],
@@ -79,8 +75,7 @@
 			0: 'blank',
 			1: 'wall',
 			2: 'sushi',
-			3: 'scoreboard',
-			4: 'onigiri'
+			4: 'onigiri',
 		}
 
 		function drawWorld(){
@@ -152,11 +147,11 @@
 				if(world[ninjaman.y + 1][ninjaman.x] != 1){
 					if(world[ninjaman.y + 1][ninjaman.x] ==2){
 						score = score + 10;
-						console.log(score);
+						//console.log(score);
 					}						
 					if(world[ninjaman.y + 1][ninjaman.x] ==4){
 						score = score + 20;
-						console.log(score);
+						//console.log(score);
 					}				
 					ninjaman.y++;
 				}
@@ -166,22 +161,9 @@
 			drawWorld();	
 			scoreKeeper();
 
-		//var score = 0;
-
+		
 		function scoreKeeper(){
-			document.getElementById('score').innerHTML = score;
-
-			//content = "<div class='score' style='left:10px; top: 400px'></div>";
-			//document.getElementById('score').innerHTML = content;
-			
-			//document.write('score').style.top = 400 + 'px';
-			//document.getElementById("score").style.left = 0 + 'px';
-			//text("Score: " + score, 40,40);
-			
-			// if( = ){
-				// score = score + 1;
-			//}
-
+			document.getElementById('score').innerHTML = "Score: "+score;
 		}
 		scoreKeeper();
 		}
